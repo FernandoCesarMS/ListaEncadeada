@@ -67,9 +67,6 @@ int List::last() const
         aux = new Node(aux->getNext());
     return aux->getData();
 }
-/** This method moves the head of the list to its last position.
- In other words, rotate() + last() == head.
- */
 void List::rotate()
 {
     std::vector<int> rotar;
