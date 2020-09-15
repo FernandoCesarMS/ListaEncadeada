@@ -1,4 +1,4 @@
-#include "Node.hpp"
+#include "Node.cpp"
 
 class List
 {
@@ -34,17 +34,12 @@ public:
  In other words, rotate() + last() == head.
  */
     void rotate();
-    /** Increase the size value
-    */
-    void increaseSize();
-    /** Decrease the size value
-    */
-    void decreaseSize();
-    /** @returns the integer that represents the list size
-    */
-    int getSize();
 
 private:
     Node *head; ///< Pointer to the first element of the list.
     int _size;
+    /** Increase the size value*/
+    void increaseSize();
+    /** Decrease the size value*/
+    void decreaseSize();
 };

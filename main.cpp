@@ -1,4 +1,3 @@
-
 #include "List.cpp"
 
 int main(int argc, char **argv)
@@ -13,12 +12,12 @@ int main(int argc, char **argv)
     }
     std::cout << "s:" << list->size() << ", ";
     std::cout << "m:" << list->middle() << ", ";
-    std::cout << "l:" << list->last() << ", ";
+    //std::cout << "l:" << list->last() << ", ";
     std::cout << "r:" << list->remove() << ", ";
-    std::cout << "m:" << list->middle() << ", ";
-    std::cout << "l:" << list->last() << ", ";
-    list.rotate();
-    std::cout << "m:" << list->middle() << ", ";
-    std::cout << "l:" << list->last() << std::endl;
+    //std::cout << "m:" << list->middle() << ", ";
+    //std::cout << "l:" << list->last() << ", ";
+    //list->rotate();
+    //std::cout << "m:" << list->middle() << ", ";
+    //std::cout << "l:" << list->last() << std::endl;
     return 0;
 }

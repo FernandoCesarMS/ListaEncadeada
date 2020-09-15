@@ -1,8 +1,13 @@
 #include "List.hpp"
 
+List::List()
+{
+    this->_size = 0;
+    this->head = new Node(NULL, NULL);
+}
 void List::insert(int value)
 {
-    if (this->isEmpty() == 0)
+    if (this->isEmpty() == 1)
         this->head = new Node(value, NULL);
     else
     {
@@ -50,6 +55,11 @@ int List::middle() const
         middle = this->size() / 2;
     else
         middle = (this->size() - 1) / 2;
+    Node *aux = new Node(this->head);
+    for (int i = 0; i < this->size(); i++)
+        if (i != this->size() - 1)
+            aux = new Node(aux->getNext());
+    return aux->getData();
 }
 /** Returns the last element in the linked list.
  @returns the integer stored in the last element of the list.

@@ -5,6 +5,10 @@ Node::Node(int data, Node *next)
     this->_data = data;
     this->_next = next;
 }
+Node::Node(Node *node){
+    this->_data = node->getData();
+    this->_next = node->getNext();
+}
 void Node::setData(int data)
 {
     this->_data = data;

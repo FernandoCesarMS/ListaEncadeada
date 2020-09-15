@@ -8,6 +8,7 @@ private:
 
 public:
     Node(int data, Node *next);
+    Node(Node *node);
     void setData(int data);
     void setNext(Node *next);
     /** Returns the data stored in the node.
