@@ -25,7 +25,10 @@ int List::remove()
     else
     {
         int a = this->head->getData();
-        this->head = new Node(this->head->getNext());
+        if (this->size() != 1)
+            this->head = new Node(this->head->getNext());
+        else
+            this->head = new Node(NULL, NULL);
         this->decreaseSize();
         return a;
     }
@@ -60,15 +63,49 @@ int List::middle() const
 int List::last() const
 {
     Node *aux = new Node(this->head);
-    for (int i = 0; i < this->size()-1; i++)
-            aux = new Node(aux->getNext());
+    for (int i = 0; i < this->size() - 1; i++)
+        aux = new Node(aux->getNext());
     return aux->getData();
 }
 /** This method moves the head of the list to its last position.
  In other words, rotate() + last() == head.
  */
-void List::rotate() {}
-
+void List::rotate()
+{
+    std::vector<int> rotar;
+    Node *aux = new Node(this->head);
+    for (int i = 0; i < this->size(); i++)
+    {
+        rotar.push_back(aux->getData());
+        if (i != this->size() - 1)
+            aux = new Node(aux->getNext());
+    }
+    aux = new Node(this->head->getNext());
+    int a = rotar.size();
+    for (int i = 0; i < a; i++)
+        this->remove();
+    this->insert(rotar[0]);
+    for (int i = a - 1; i > 0; i--)
+        this->insert(rotar[i]);
+}
+void List::print()
+{
+    Node *aux = new Node(this->head);
+    std::cout << "(" << aux->getData();
+    for (int i = 0; i < this->size() - 1; i++)
+    {
+        aux = new Node(aux->getNext());
+        if (i == this->size() - 1)
+        {
+            std::cout << aux->getData();
+        }
+        else
+        {
+            std::cout << "," << aux->getData();
+        }
+    }
+    std::cout << ")";
+}
 void List::increaseSize()
 {
     this->_size++;

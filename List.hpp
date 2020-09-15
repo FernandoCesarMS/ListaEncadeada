@@ -34,7 +34,7 @@ public:
  In other words, rotate() + last() == head.
  */
     void rotate();
-
+   void print();
 private:
     Node *head; ///< Pointer to the first element of the list.
     int _size;

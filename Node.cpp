@@ -1,3 +1,4 @@
+#include <vector>
 #include "Node.hpp"
 
 Node::Node(int data, Node *next)
